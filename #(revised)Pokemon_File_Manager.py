@@ -16,21 +16,21 @@ def rename_pokemon():
     print(list_of_pokemon)
 
     for i in range(int(len(list_of_pokemon)/2)):
-            NUMBER = list_of_pokemon[2*i]
-            if i == 0:
-                NUMBER = list_of_pokemon[0]
-            NAME = list_of_pokemon[(2*i)+1]
-            if i == 0:
-                NAME = list_of_pokemon[1]
+        NUMBER = list_of_pokemon[2*i]
+        if i == 0:
+            NUMBER = list_of_pokemon[0]
+        NAME = list_of_pokemon[(2*i)+1]
+        if i == 0:
+            NAME = list_of_pokemon[1]
         
-    print(NUMBER+" "+NAME)
-    for image_filename in glob.iglob(src_path+r"/*.png"): 
-        if re.search(f'{NUMBER}', image_filename):
-            try:
-                os.rename(image_filename,src_path+"\\"+f"{NAME}"+".png")
-                print(image_filename)
-            except:
-                os.rename(image_filename,image_filename.replace(f'{NUMBER}',f'{NAME}'))
+        print(NUMBER+" "+NAME)
+        for image_filename in glob.iglob(src_path+r"/*.png"): 
+            if re.search(f'{NUMBER}', image_filename):
+                try:
+                    os.rename(image_filename,src_path+"\\"+f"{NAME}"+".png")
+                    print(image_filename)
+                except:
+                    os.rename(image_filename,image_filename.replace(f'{NUMBER}',f'{NAME}'))
 
 
 
